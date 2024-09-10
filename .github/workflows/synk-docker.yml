@@ -17,7 +17,7 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: nodejs-goof:latest
-        args: --file=Dockerfile --sarif-file-output=snyk.sarif
+        args: --file=Dockerfile
     - name: Replace security-severity undefined for license-related findings 
       run: "sed -i 's/\"security-severity\": \"undefined\"/\"security-severity\": \"0\"/g' snyk.sarif"
     - name: Replace security-severity undefined for license-related findings 
