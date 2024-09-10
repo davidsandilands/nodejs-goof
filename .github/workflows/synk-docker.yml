@@ -18,6 +18,8 @@ jobs:
       with:
         image: nodejs-goof:latest
         args: --file=Dockerfile
+    - name: Inspect SARIF file
+      run: cat snyk.sarif
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
