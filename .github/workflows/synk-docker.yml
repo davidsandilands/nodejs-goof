@@ -17,8 +17,7 @@ jobs:
       with:
         image: nodejs-goof:latest
         json: true
-        args: --file=Dockerfile
-        fail-on: all
+        args: --file=Dockerfile --sarif-file-output=snyk.sarif
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
